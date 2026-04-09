@@ -9,40 +9,35 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    /* SUA PALETA DE CORES DEFINIDA */
-    --blue: #1d419d;          /* Azul Principal */
-    --blue-dark: #102d73;     /* Azul Escuro (Derivado) */
-    --black: #000000;         /* Preto Puro */
-    --white: #FFFFFF;         /* Branco Puro */
-
-    /* Tons Sutis de Cinza para Divisores e Elementos de Apoio (Baseados no Preto) */
-    --gray-bg: #FFFFFF;       /* Fundo da Página (Branco Puro como solicitado) */
-    --gray-card: #FFFFFF;     /* Fundo dos Cartões (Branco Puro como solicitado) */
-    --gray-subtle-bg: #f5f5f5;/* Fundo Sutil (Base Preto) para Resumo */
-    --gray-progress: #eeeeee; /* Fundo da Barra de Progresso */
-    --gray-border: #e0e0e0;   /* Cor das Bordas e Linhas Divisórias */
-    --gray-hint: #999999;     /* Dicas e Textos Secundários */
-    --gray-desc: #444444;     /* Descrições e Legendas (Preto mais suave) */
-
+    --blue: #1d419d;
+    --blue-dark: #163180;
+    --blue-pale: #eef2fb;
+    --blue-border: #c0cef0;
+    --black: #000000;
+    --white: #ffffff;
+    --gray-100: #f7f7f7;
+    --gray-200: #efefef;
+    --gray-400: #999;
+    --gray-600: #555;
+    --gray-800: #222;
+    --border: #e0e0e0;
     --radius: 8px;
     --radius-lg: 14px;
   }
 
   body {
     font-family: 'DM Sans', sans-serif;
-    background: var(--gray-bg);
+    background: var(--gray-100);
     color: var(--black);
     min-height: 100vh;
     padding: 0 0 5rem;
-    font-size: 16px; /* Base de leitura otimizada */
-    line-height: 1.6;
   }
 
   /* HEADER */
   .header {
     background: var(--white);
-    border-bottom: 1px solid var(--gray-border);
-    padding: clamp(2rem, 5vw, 3rem) 1.5rem 2.5rem;
+    border-bottom: 1px solid var(--border);
+    padding: 2.25rem 1.5rem 2rem;
     text-align: center;
   }
 
@@ -53,47 +48,47 @@
   }
 
   .logo-wrap img {
-    height: clamp(100px, 15vw, 140px); /* Logo Responsivo */
+    height: 120px;
     width: auto;
     display: block;
   }
 
   .divider-rule {
-    width: 50px;
-    height: 2px;
+    width: 40px;
+    height: 1px;
     background: var(--blue);
-    margin: 0 auto 1.5rem;
+    margin: 0 auto 1.25rem;
   }
 
   .header h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(28px, 6vw, 38px); /* Título Fluido (Responsivo) */
+    font-size: clamp(22px, 5vw, 30px);
     font-weight: 500;
     letter-spacing: 0.02em;
     color: var(--black);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
   .header-sub {
-    font-size: 16px;
-    color: var(--gray-desc);
+    font-size: 13.5px;
+    color: var(--gray-600);
     line-height: 1.7;
-    max-width: 520px;
-    margin: 0 auto 2rem;
+    max-width: 460px;
+    margin: 0 auto 1.5rem;
   }
 
-  /* PROGRESS BAR */
+  /* PROGRESS */
   .progress-wrap {
-    max-width: 520px;
+    max-width: 480px;
     margin: 0 auto;
   }
 
   .progress-bar {
-    background: var(--gray-progress);
+    background: var(--gray-200);
     border-radius: 99px;
-    height: 4px;
+    height: 3px;
     overflow: hidden;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   .progress-fill {
@@ -106,26 +101,26 @@
   .progress-meta {
     display: flex;
     justify-content: space-between;
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    color: var(--gray-hint);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--gray-400);
     text-transform: uppercase;
   }
 
-  /* MAIN CONTENT */
+  /* MAIN */
   .main {
-    max-width: 720px; /* Alargado para Desktop (Responsivo) */
-    margin: 3rem auto 0;
-    padding: 0 1.5rem; /* Margem de segurança para Mobile */
+    max-width: 600px;
+    margin: 2rem auto 0;
+    padding: 0 1rem;
   }
 
   /* SECTION CARD */
   .section-card {
     display: none;
-    background: var(--gray-card);
-    border: 1px solid var(--gray-border);
+    background: var(--white);
+    border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: clamp(1.5rem, 5vw, 2.5rem); /* Padding Fluido (Responsivo) */
+    padding: 2rem 1.75rem;
     animation: fadeUp 0.3s cubic-bezier(.4,0,.2,1);
   }
 
@@ -139,87 +134,87 @@
   .section-eyebrow {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 1.25rem;
+    gap: 8px;
+    margin-bottom: 1rem;
   }
 
   .section-num {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--blue);
   }
 
   .section-dot {
-    width: 4px; height: 4px;
+    width: 3px; height: 3px;
     background: var(--blue-border);
     border-radius: 50%;
   }
 
   .section-tag {
-    font-size: 12px;
-    letter-spacing: 0.1em;
+    font-size: 11px;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--gray-hint);
+    color: var(--gray-400);
   }
 
   .section-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(24px, 5vw, 32px); /* Título Seção Fluido (Responsivo) */
+    font-size: clamp(19px, 4vw, 24px);
     font-weight: 500;
     color: var(--black);
-    line-height: 1.2;
-    margin-bottom: 0.75rem;
+    line-height: 1.25;
+    margin-bottom: 0.4rem;
   }
 
   .section-desc {
-    font-size: 15px;
-    color: var(--gray-desc);
+    font-size: 13px;
+    color: var(--gray-600);
     line-height: 1.65;
-    margin-bottom: 2rem;
-    padding-bottom: 1.75rem;
-    border-bottom: 1px solid var(--gray-border);
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
   }
 
   /* FIELDS */
-  .field { margin-bottom: 1.75rem; }
+  .field { margin-bottom: 1.35rem; }
   .field:last-of-type { margin-bottom: 0; }
 
   .field-label {
     display: block;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 500;
     color: var(--black);
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     letter-spacing: 0.01em;
   }
 
   .field-hint {
     display: block;
-    font-size: 13px;
-    color: var(--gray-hint);
-    margin-bottom: 10px;
+    font-size: 12px;
+    color: var(--gray-400);
+    margin-bottom: 7px;
     line-height: 1.55;
   }
 
   .field input[type="text"],
   .field textarea {
     width: 100%;
-    padding: 14px 16px;
+    padding: 11px 13px;
     font-family: 'DM Sans', sans-serif;
-    font-size: 16px; /* Tamanho Mobile/Desktop Comfort (Evita Zoom) */
+    font-size: 14px;
     color: var(--black);
-    background: var(--white);
-    border: 1px solid var(--gray-border);
+    background: var(--gray-100);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     resize: vertical;
-    transition: all 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
     line-height: 1.6;
     -webkit-appearance: none;
   }
 
-  .field textarea { min-height: 120px; }
+  .field textarea { min-height: 90px; }
 
   .field input:focus,
   .field textarea:focus {
@@ -232,21 +227,21 @@
   .field input::placeholder,
   .field textarea::placeholder { color: #ccc; }
 
-  /* NAVIGATION */
+  /* NAV */
   .nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--gray-border);
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
   }
 
   .btn {
     font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
+    font-size: 13.5px;
     font-weight: 500;
-    padding: 12px 28px;
+    padding: 10px 22px;
     border-radius: var(--radius);
     cursor: pointer;
     transition: all 0.15s;
@@ -257,10 +252,10 @@
 
   .btn-ghost {
     background: transparent;
-    color: var(--gray-desc);
-    border-color: var(--gray-border);
+    color: var(--gray-600);
+    border-color: var(--border);
   }
-  .btn-ghost:hover { background: #f9f9f9; }
+  .btn-ghost:hover { background: var(--gray-100); }
   .btn-ghost.hidden { visibility: hidden; pointer-events: none; }
 
   .btn-primary {
@@ -279,18 +274,18 @@
   .btn-success:hover { background: #222; }
 
   .nav-counter {
-    font-size: 13px;
+    font-size: 11px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--gray-hint);
+    color: var(--gray-400);
     text-align: center;
   }
 
-  /* SUMMARY CARD */
+  /* SUMMARY */
   .summary-card {
     display: none;
-    background: var(--gray-card);
-    border: 1px solid var(--gray-border);
+    background: var(--white);
+    border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     overflow: hidden;
     animation: fadeUp 0.3s cubic-bezier(.4,0,.2,1);
@@ -298,46 +293,46 @@
   .summary-card.active { display: block; }
 
   .summary-header {
-    padding: 2rem 2.25rem;
-    border-bottom: 1px solid var(--gray-border);
-    background: #f9f9f9; /* Derivado do Branco */
+    padding: 1.5rem 1.75rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--blue-pale);
   }
   .summary-header h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(20px, 4vw, 24px);
+    font-size: 20px;
     font-weight: 500;
     color: var(--blue-dark);
     margin-bottom: 0.25rem;
   }
-  .summary-header p { font-size: 15px; color: var(--blue); line-height: 1.55; }
+  .summary-header p { font-size: 13px; color: var(--blue); line-height: 1.55; }
 
-  .summary-section { border-bottom: 1px solid var(--gray-border); }
+  .summary-section { border-bottom: 1px solid var(--border); }
   .summary-section:last-child { border-bottom: none; }
 
   .summary-section-title {
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 11px;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--gray-hint);
-    padding: 12px 2.25rem;
-    background: #f9f9f9; /* Derivado do Branco */
-    border-bottom: 1px solid var(--gray-border);
+    color: var(--gray-400);
+    padding: 10px 1.75rem 6px;
+    background: var(--gray-100);
+    border-bottom: 1px solid var(--border);
   }
 
-  .summary-qa { padding: 15px 2.25rem; border-bottom: 1px solid var(--gray-border); }
+  .summary-qa { padding: 10px 1.75rem; border-bottom: 1px solid var(--border); }
   .summary-qa:last-child { border-bottom: none; }
-  .summary-q { font-size: 12px; color: var(--gray-hint); margin-bottom: 5px; text-transform: uppercase; }
-  .summary-a { font-size: 16px; color: var(--black); line-height: 1.6; white-space: pre-wrap; }
-  .summary-empty { font-size: 15px; color: #ccc; font-style: italic; }
+  .summary-q { font-size: 11.5px; color: var(--gray-400); margin-bottom: 3px; }
+  .summary-a { font-size: 13.5px; color: var(--black); line-height: 1.55; white-space: pre-wrap; }
+  .summary-empty { font-size: 13px; color: #ccc; font-style: italic; }
 
-  /* SENDING CARD */
+  /* SENDING */
   .sending-card {
     display: none;
     background: var(--white);
-    border: 1px solid var(--gray-border);
+    border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 4rem 2rem;
+    padding: 3.5rem 1.5rem;
     text-align: center;
     animation: fadeUp 0.3s ease;
   }
@@ -345,30 +340,30 @@
 
   .spinner {
     width: 36px; height: 36px;
-    border: 2px solid #eee; /* Base Preto Sutil */
+    border: 2px solid var(--gray-200);
     border-top-color: var(--blue);
     border-radius: 50%;
     animation: spin 0.75s linear infinite;
-    margin: 0 auto 1.5rem;
+    margin: 0 auto 1.25rem;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
 
   .sending-card h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 500;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     color: var(--black);
   }
-  .sending-card p { font-size: 15px; color: var(--gray-desc); }
+  .sending-card p { font-size: 13px; color: var(--gray-600); }
 
-  /* CONCLUÍDO CARD */
+  /* DONE */
   .done-card {
     display: none;
     background: var(--white);
-    border: 1px solid var(--gray-border);
+    border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: clamp(3.5rem, 8vw, 4.5rem) 2rem;
+    padding: 3.5rem 1.5rem;
     text-align: center;
     animation: fadeUp 0.35s cubic-bezier(.4,0,.2,1);
   }
@@ -376,8 +371,8 @@
 
   .done-icon {
     width: 56px; height: 56px;
-    background: #f9f9f9; /* Derivado Branco Sutil */
-    border: 1px solid #eee; /* Base Preto Sutil */
+    background: var(--blue-pale);
+    border: 1px solid var(--blue-border);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     margin: 0 auto 1.5rem;
@@ -385,34 +380,34 @@
 
   .done-card h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(26px, 6vw, 32px);
+    font-size: 26px;
     font-weight: 500;
     color: var(--black);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.65rem;
   }
 
   .done-card p {
-    font-size: 16px;
-    color: var(--gray-desc);
+    font-size: 14px;
+    color: var(--gray-600);
     line-height: 1.7;
     max-width: 380px;
     margin: 0 auto;
   }
 
   .done-detail {
-    font-size: 13px;
-    color: var(--gray-hint);
-    margin-top: 1.75rem;
+    font-size: 12px;
+    color: var(--gray-400);
+    margin-top: 1.5rem;
     letter-spacing: 0.02em;
   }
 
   .done-rule {
     width: 32px; height: 1px;
-    background: var(--gray-border);
-    margin: 1.75rem auto;
+    background: var(--blue-border);
+    margin: 1.5rem auto;
   }
 
-  /* ERRO CARD */
+  /* ERROR */
   .error-card {
     display: none;
     background: var(--white);
@@ -425,31 +420,39 @@
   .error-card.active { display: block; }
   .error-card h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 22px; font-weight: 500; color: #a33; margin-bottom: 0.5rem;
+    font-size: 20px; font-weight: 500; color: #a33; margin-bottom: 0.5rem;
   }
-  .error-card p { font-size: 15px; color: var(--gray-desc); line-height: 1.6; margin-bottom: 1.25rem; }
+  .error-card p { font-size: 13px; color: var(--gray-600); line-height: 1.6; margin-bottom: 1.25rem; }
 
   .btn-retry {
     font-family: 'DM Sans', sans-serif;
-    font-size: 15px; font-weight: 500;
+    font-size: 13px; font-weight: 500;
     padding: 9px 20px;
     border-radius: var(--radius);
     cursor: pointer;
-    border: 1px solid var(--gray-border);
+    border: 1px solid var(--border);
     background: var(--white);
     color: var(--black);
     transition: background 0.15s;
   }
-  .btn-retry:hover { background: #f9f9f9; }
+  .btn-retry:hover { background: var(--gray-100); }
 
   /* FOOTER */
   .footer {
     text-align: center;
-    margin-top: 3rem;
-    font-size: 12px;
-    color: var(--gray-hint);
+    margin-top: 2.5rem;
+    font-size: 11px;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    color: #ccc;
+  }
+
+  .footer img {
+    height: 18px;
+    width: auto;
+    opacity: 0.2;
+    display: block;
+    margin: 0 auto 6px;
   }
 </style>
 </head>
@@ -473,197 +476,225 @@
 
 <div class="main">
 
+  <!-- S1 -->
   <div class="section-card active" data-section="1">
     <div class="section-eyebrow"><span class="section-num">01</span><span class="section-dot"></span><span class="section-tag">Sobre o negócio</span></div>
     <h2 class="section-title">Conta pra mim sobre a sua marca</h2>
-    <p class="section-desc">Essas informações ajudam a entender a essência da sua empresa.</p>
+    <p class="section-desc">Essas informações ajudam a entender a essência da sua empresa e orientam toda a comunicação.</p>
     <div class="field">
       <label class="field-label">Qual é o nome da empresa ou marca?</label>
-      <textarea id="q1_2"></textarea>
+      <input type="text" id="q1_1" placeholder="Ex: Marca X, Empresa Y…">
     </div>
     <div class="field">
       <label class="field-label">Qual a história e o propósito da marca?</label>
-      <textarea id="q1_2" placeholder="Como surgiu a ideia? O que motivou a criação?"></textarea>
+      <span class="field-hint">Como surgiu a ideia? O que motivou a criação?</span>
+      <textarea id="q1_2" placeholder="Ex: Identifiquei uma oportunidade no mercado e decidi empreender com um produto ou serviço diferenciado…"></textarea>
     </div>
     <div class="field">
       <label class="field-label">Qual a visão de longo prazo para o negócio?</label>
-      <textarea id="q1_3" placeholder="Onde você quer chegar em 2–3 anos?"></textarea>
+      <span class="field-hint">Onde você quer chegar em 2–3 anos?</span>
+      <textarea id="q1_3" placeholder="Ex: Quero ter uma loja online consolidada e distribuir em mercados locais…"></textarea>
     </div>
   </div>
 
+  <!-- S2 -->
   <div class="section-card" data-section="2">
     <div class="section-eyebrow"><span class="section-num">02</span><span class="section-dot"></span><span class="section-tag">Produtos</span></div>
     <h2 class="section-title">Seus produtos e diferenciais</h2>
-    <p class="section-desc">Queremos entender o que você vende.</p>
+    <p class="section-desc">Queremos entender o que você vende e quais são os principais diferenciais dos seus produtos.</p>
     <div class="field">
-      <label class="field-label">Descreva a linha de produtos</label>
-      <textarea id="q2_1"></textarea>
+      <label class="field-label">Descreva a linha de produtos ou serviços</label>
+      <span class="field-hint">Quais os principais diferenciais e benefícios gerais.</span>
+      <textarea id="q2_1" placeholder="Ex: Produto A, produto B, serviço C — descreva resumidamente cada um…"></textarea>
     </div>
     <div class="field">
-      <label class="field-label">Quais os diferenciais da granola?</label>
-      <textarea id="q2_2"></textarea>
+      <label class="field-label">Quais os principais ingredientes ou componentes do produto principal?</label>
+      <textarea id="q2_2" placeholder="Ex: Matéria-prima diferenciada, processo artesanal, fórmula exclusiva…"></textarea>
     </div>
     <div class="field">
-      <label class="field-label">Qual o preço médio da granola?</label>
-      <input type="text" id="q2_4">
+      <label class="field-label">Quais os benefícios específicos para o consumidor?</label>
+      <textarea id="q2_3" placeholder="Ex: Praticidade, saúde, economia, exclusividade…"></textarea>
+    </div>
+    <div class="field">
+      <label class="field-label">Qual o preço médio ou faixa de preço do produto principal?</label>
+      <input type="text" id="q2_4" placeholder="Ex: R$ 25–35 por pote de 300g">
     </div>
   </div>
 
+  <!-- S3 -->
   <div class="section-card" data-section="3">
     <div class="section-eyebrow"><span class="section-num">03</span><span class="section-dot"></span><span class="section-tag">Público-alvo</span></div>
     <h2 class="section-title">Para quem você vende?</h2>
-    <p class="section-desc">Quanto mais detalhado, melhor conseguimos direcionar a comunicação.</p>
+    <p class="section-desc">Quanto mais detalhado, melhor conseguimos direcionar a comunicação e escolher os canais certos.</p>
     <div class="field">
-      <label class="field-label">Quem é o cliente ideal?</label>
-      <textarea id="q3_1" placeholder="Idade, estilo de vida, hábitos alimentares, etc."></textarea>
+      <label class="field-label">Quem é o cliente ideal para o seu produto ou serviço?</label>
+      <span class="field-hint">Idade, gênero, localização, estilo de vida, hábitos alimentares, preocupações com saúde.</span>
+      <textarea id="q3_1" style="min-height:110px" placeholder="Ex: Mulheres de 28–45 anos, moradoras de cidades médias, ativas, preocupadas com qualidade de vida…"></textarea>
     </div>
   </div>
 
+  <!-- S4 -->
   <div class="section-card" data-section="4">
     <div class="section-eyebrow"><span class="section-num">04</span><span class="section-dot"></span><span class="section-tag">Concorrência</span></div>
     <h2 class="section-title">Quem mais está no mercado?</h2>
-    <p class="section-desc">Conhecer os concorrentes ajuda a encontrar oportunidades.</p>
+    <p class="section-desc">Conhecer os concorrentes ajuda a encontrar oportunidades e posicionamentos diferenciados.</p>
     <div class="field">
-      <label class="field-label">Concorrentes diretos?</label>
-      <textarea id="q4_1"></textarea>
+      <label class="field-label">Você conhece concorrentes diretos no seu segmento?</label>
+      <span class="field-hint">Nome das marcas, se souber.</span>
+      <textarea id="q4_1" placeholder="Ex: Empresa A, Marca B no mercado local…"></textarea>
     </div>
     <div class="field">
-      <label class="field-label">Links de Instagram, site ou exemplos</label>
-      <textarea id="q4_2"></textarea>
+      <label class="field-label">Links de Instagram, site ou exemplos (opcional)</label>
+      <span class="field-hint">Cole aqui qualquer link de perfil ou produto.</span>
+      <textarea id="q4_2" placeholder="Ex: @marcax no Instagram, www.concorrente.com.br…"></textarea>
     </div>
   </div>
 
+  <!-- S5 -->
   <div class="section-card" data-section="5">
     <div class="section-eyebrow"><span class="section-num">05</span><span class="section-dot"></span><span class="section-tag">Objetivos</span></div>
     <h2 class="section-title">O que você quer alcançar?</h2>
-    <p class="section-desc">Entender seus objetivos nos ajuda a priorizar ações.</p>
+    <p class="section-desc">Entender seus objetivos nos ajuda a priorizar ações e medir resultados de forma realista.</p>
     <div class="field">
       <label class="field-label">Qual o objetivo principal agora?</label>
-      <textarea id="q5_1"></textarea>
+      <span class="field-hint">Ex: aumentar seguidores, gerar vendas, criar reconhecimento de marca…</span>
+      <textarea id="q5_1" placeholder="Ex: Quero começar a vender online e ter pelo menos 10 pedidos por semana em 3 meses…"></textarea>
     </div>
     <div class="field">
       <label class="field-label">Há objetivos secundários?</label>
-      <textarea id="q5_2"></textarea>
+      <textarea id="q5_2" placeholder="Ex: Construir uma base de clientes fiéis, aparecer em buscas do Google…"></textarea>
     </div>
     <div class="field">
-      <label class="field-label">Qual o orçamento disponível?</label>
-      <input type="text" id="q5_3">
+      <label class="field-label">Qual o orçamento disponível para marketing?</label>
+      <span class="field-hint">Pode ser um valor mensal aproximado ou uma faixa.</span>
+      <input type="text" id="q5_3" placeholder="Ex: R$ 0 por enquanto / R$ 100–200/mês / Sem orçamento definido">
     </div>
   </div>
 
+  <!-- S6 -->
   <div class="section-card" data-section="6">
     <div class="section-eyebrow"><span class="section-num">06</span><span class="section-dot"></span><span class="section-tag">Recursos</span></div>
     <h2 class="section-title">Com o que você já conta?</h2>
-    <p class="section-desc">Saber o que já existe evita retrabalho.</p>
+    <p class="section-desc">Saber o que já existe evita retrabalho e nos permite partir do ponto certo.</p>
     <div class="field">
-      <label class="field-label">Você possui website ou perfis ativos?</label>
-      <textarea id="q6_1"></textarea>
+      <label class="field-label">Você possui website, loja virtual ou perfis em redes sociais?</label>
+      <span class="field-hint">Informe os links ou plataformas ativas.</span>
+      <textarea id="q6_1" placeholder="Ex: Instagram @marca, ainda não tenho site, tenho WhatsApp Business…"></textarea>
     </div>
     <div class="field">
-      <label class="field-label">Tem material visual (fotos, vídeos)?</label>
-      <textarea id="q6_2"></textarea>
+      <label class="field-label">Tem material visual (fotos, vídeos)? Qual a qualidade?</label>
+      <textarea id="q6_2" placeholder="Ex: Tenho fotos feitas no celular, algumas profissionais, nenhum vídeo ainda…"></textarea>
     </div>
     <div class="field">
-      <label class="field-label">Quanto tempo consegue dedicar ao marketing?</label>
-      <input type="text" id="q6_3">
+      <label class="field-label">Quanto tempo por semana você consegue dedicar ao marketing?</label>
+      <input type="text" id="q6_3" placeholder="Ex: 2–3 horas por semana / só nos fins de semana…">
     </div>
   </div>
 
+  <!-- S7 -->
   <div class="section-card" data-section="7">
     <div class="section-eyebrow"><span class="section-num">07</span><span class="section-dot"></span><span class="section-tag">Diferenciais</span></div>
-    <h2 class="section-title">O que torna a sua granola única?</h2>
-    <p class="section-desc">Sua proposta de valor única é o coração da estratégia.</p>
+    <h2 class="section-title">O que torna o seu produto ou serviço único?</h2>
+    <p class="section-desc">Sua proposta de valor única (PVU) é o coração da estratégia — vamos identificá-la juntos.</p>
     <div class="field">
-      <label class="field-label">Por que um cliente escolheria a sua granola?</label>
-      <textarea id="q7_1"></textarea>
+      <label class="field-label">Por que um cliente escolheria o seu produto ou serviço em vez de outro?</label>
+      <textarea id="q7_1" placeholder="Ex: Atendimento personalizado, qualidade superior, preço justo, processo exclusivo…"></textarea>
     </div>
     <div class="field">
-      <label class="field-label">Existem certificações?</label>
-      <input type="text" id="q7_2">
+      <label class="field-label">Existem certificações? (orgânico, vegano, sem glúten etc.)</label>
+      <input type="text" id="q7_2" placeholder="Ex: Sem certificação formal, mas vegano / Certificação orgânica em andamento…">
     </div>
     <div class="field">
-      <label class="field-label">Qual a história por trás da criação?</label>
-      <textarea id="q7_3"></textarea>
+      <label class="field-label">Qual a história por trás da criação do produto ou da marca?</label>
+      <span class="field-hint">Esse é um dos ativos mais valiosos para o marketing de conteúdo.</span>
+      <textarea id="q7_3" placeholder="Ex: Identifiquei um problema no mercado e desenvolvi uma solução diferente…"></textarea>
     </div>
   </div>
 
+  <!-- RESUMO -->
   <div class="summary-card" id="summaryCard">
     <div class="summary-header">
       <h2>Revisão das respostas</h2>
-      <p>Confira tudo antes de enviar. Você pode voltar para editar.</p>
+      <p>Confira tudo antes de enviar. Você pode voltar para editar qualquer seção.</p>
     </div>
     <div id="summaryContent"></div>
   </div>
 
+  <!-- ENVIANDO -->
   <div class="sending-card" id="sendingCard">
     <div class="spinner"></div>
     <h2>Enviando suas respostas…</h2>
-    <p>Aguarde um instante, estamos registrando tudo.</p>
+    <p>Aguarde um instante, estamos registrando tudo na planilha.</p>
   </div>
 
+  <!-- CONCLUÍDO -->
   <div class="done-card" id="doneCard">
     <div class="done-icon">
       <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-        <path d="M5 13L10.5 18.5L21 7" stroke="#1d419d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M5 13L10.5 18.5L21 7" stroke="#1d419d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
     <h2>Briefing enviado!</h2>
     <div class="done-rule"></div>
-    <p>Suas respostas foram registradas com sucesso. Em breve você receberá a estratégia personalizada.</p>
+    <p>Suas respostas foram registradas com sucesso. Em breve você receberá a estratégia de marketing digital personalizada.</p>
+    <p class="done-detail">Os dados já estão disponíveis na planilha da Opus Magnum Digital.</p>
   </div>
 
+  <!-- ERRO -->
   <div class="error-card" id="errorCard">
     <h2>Ops, algo deu errado</h2>
-    <p>Não foi possível enviar. Verifique sua conexão e tente novamente.</p>
+    <p>Não foi possível enviar suas respostas. Verifique sua conexão com a internet e tente novamente.</p>
     <button class="btn-retry" onclick="retrySubmit()">Tentar novamente</button>
   </div>
 
+  <!-- NAV -->
   <div class="nav" id="navBar">
     <button class="btn btn-ghost hidden" id="btnPrev" onclick="navigate(-1)">← Voltar</button>
     <span class="nav-counter" id="navCounter">1 / 7</span>
     <button class="btn btn-primary" id="btnNext" onclick="navigate(1)">Avançar →</button>
   </div>
 
-  <div class="footer">Opus Magnum Digital</div>
+  <div class="footer">
+    Opus Magnum Digital · Briefing Confidencial
+  </div>
 </div>
 
 <script>
-  // URL DO GOOGLE APPS SCRIPT
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwqDz8q7PBrHQ-YnLmREQChqEFetLXB8ezLzrSxa72uOe-L869WYPeObUM6oY8CvkcXhw/exec";
 
-  // DEFINIÇÃO DAS SEÇÕES E QUESTÕES (Para Mapeamento do Resumo e Envio)
-  const SECTIONS_META = [
+  const SECTIONS = [
     { title: "Sobre o negócio", questions: [
-      { id: "q1_1", label: "Nome da marca", key: "nome_marca" },
-      { id: "q1_2", label: "História e propósito", key: "historia_proposito" },
-      { id: "q1_3", label: "Visão", key: "visao_longo_prazo" }
+      { id: "q1_1", label: "Nome da empresa ou marca", key: "nome_marca" },
+      { id: "q1_2", label: "História e propósito da marca", key: "historia_proposito" },
+      { id: "q1_3", label: "Visão de longo prazo", key: "visao_longo_prazo" }
     ]},
-    { title: "Produtos", questions: [
+    { title: "Produtos e foco atual", questions: [
       { id: "q2_1", label: "Linha de produtos", key: "linha_produtos" },
-      { id: "q2_2", label: "Diferenciais Granola", key: "ingredientes_granola" },
-      { id: "q2_4", label: "Preço médio", key: "preco" }
+      { id: "q2_2", label: "Ingredientes ou componentes do produto principal", key: "ingredientes_produto" },
+      { id: "q2_3", label: "Benefícios para o consumidor", key: "beneficios" },
+      { id: "q2_4", label: "Preço médio ou faixa de preço", key: "preco" }
     ]},
     { title: "Público-alvo", questions: [
-      { id: "q3_1", label: "Cliente ideal", key: "publico_alvo" }
+      { id: "q3_1", label: "Perfil do cliente ideal", key: "publico_alvo" }
     ]},
     { title: "Concorrência", questions: [
       { id: "q4_1", label: "Concorrentes diretos", key: "concorrentes" },
-      { id: "q4_2", label: "Links/Exemplos", key: "links_concorrentes" }
+      { id: "q4_2", label: "Links ou exemplos", key: "links_concorrentes" }
     ]},
-    { title: "Objetivos", questions: [
-      { id: "q5_1", label: "Objetivo Principal", key: "objetivo_principal" },
-      { id: "q5_2", label: "Secundários", key: "objetivos_secundarios" },
-      { id: "q5_3", label: "Orçamento", key: "orcamento" }
+    { title: "Objetivos de marketing", questions: [
+      { id: "q5_1", label: "Objetivo principal", key: "objetivo_principal" },
+      { id: "q5_2", label: "Objetivos secundários", key: "objetivos_secundarios" },
+      { id: "q5_3", label: "Orçamento disponível", key: "orcamento" }
     ]},
-    { title: "Recursos", questions: [
-      { id: "q6_1", label: "Website/Redes Sociais", key: "canais_digitais" },
-      { id: "q6_2", label: "Material Visual", key: "material_visual" },
-      { id: "q6_3", label: "Tempo Semanal", key: "tempo_marketing" }
+    { title: "Recursos disponíveis", questions: [
+      { id: "q6_1", label: "Website, loja ou redes sociais", key: "canais_digitais" },
+      { id: "q6_2", label: "Material visual", key: "material_visual" },
+      { id: "q6_3", label: "Tempo disponível para marketing", key: "tempo_marketing" }
     ]},
-    { title: "Diferenciais únicos", questions: [
-      { id: "q7_1", label: "PVU (Proposta Única)", key: "diferencial" },
+    { title: "Diferenciais e proposta de valor", questions: [
+      { id: "q7_1", label: "Principal motivo para escolher seu produto", key: "diferencial" },
       { id: "q7_2", label: "Certificações", key: "certificacoes" },
-      { id: "q7_3", label: "História da Criação", key: "historia_criacao" }
+      { id: "q7_3", label: "História por trás da criação", key: "historia_criacao" }
     ]}
   ];
 
@@ -685,7 +716,7 @@
     if (inSummary) {
       prev.classList.remove('hidden');
       prev.onclick = backFromSummary;
-      next.textContent = 'Enviar Briefing →';
+      next.textContent = 'Enviar respostas →';
       next.className = 'btn btn-success';
       next.onclick = submitForm;
       return;
@@ -699,7 +730,7 @@
       next.textContent = 'Avançar →';
       next.className = 'btn btn-primary';
     }
-    next.onclick = () => navigate(dir = 1);
+    next.onclick = () => navigate(1);
   }
 
   function navigate(dir) {
@@ -725,7 +756,7 @@
     updateProgress(); updateNav();
     const content = document.getElementById('summaryContent');
     content.innerHTML = '';
-    SECTIONS_META.forEach((sec, i) => {
+    SECTIONS.forEach((sec, i) => {
       const wrap = document.createElement('div');
       wrap.className = 'summary-section';
       const title = document.createElement('div');
@@ -733,7 +764,8 @@
       title.textContent = '0' + (i+1) + ' · ' + sec.title;
       wrap.appendChild(title);
       sec.questions.forEach(q => {
-        const val = document.getElementById(q.id).value.trim();
+        const el = document.getElementById(q.id);
+        const val = el ? el.value.trim() : '';
         const row = document.createElement('div');
         row.className = 'summary-qa';
         row.innerHTML = '<div class="summary-q">' + q.label + '</div>' +
@@ -757,9 +789,10 @@
 
   function collectData() {
     const data = {};
-    SECTIONS_META.forEach(sec => {
+    SECTIONS.forEach(sec => {
       sec.questions.forEach(q => {
-        data[q.key] = document.getElementById(q.id).value.trim();
+        const el = document.getElementById(q.id);
+        data[q.key] = el ? el.value.trim() : '';
       });
     });
     return data;
